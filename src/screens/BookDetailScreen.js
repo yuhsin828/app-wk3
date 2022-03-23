@@ -1,12 +1,5 @@
 import React from "react";
-import {
-    StyleSheet,
-    Text,
-    View,
-    ScrollView,
-    Image,
-    Pressable,
-} from "react-native";
+import { StyleSheet, Text, View, ScrollView, Image, Pressable, } from "react-native";
 
 const BookDetailScreen = ({ route: { params } }) => {
     const { title, author, image, star, starCount, description, price } = params;

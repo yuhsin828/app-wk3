@@ -2,12 +2,12 @@ import React from "react";
 import { View } from "react-native";
 
 import BookList from "../components/BookList";
-import sections from "../json/bookData.json";
+import bookData from "../json/bookData.json";
 
 const BookListScreen = ({ navigation }) => {
     return (
         <View style={{ flex: 1, backgroundColor: "#fff" }}>
-            <BookList list={sections} navigation={navigation} />
+            <BookList list={bookData} navigation={navigation} />
         </View>
     );
 };
