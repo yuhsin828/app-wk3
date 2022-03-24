@@ -130,7 +130,12 @@ const HomeStack = ({ navigation }) => {
             <Stack.Screen
                 name="Detail"
                 component={BookDetailScreen}
-                options={({ route }) => ({
+                options={{
+                    // headerLeft: () => (
+                    //     <Pressable onPress={() => navigation.navigate("Home", route)}>
+                    //         <Image source={require("../icon/icon_back.png")} />
+                    //     </Pressable>
+                    // ),
                     headerBackImageSource: require("../icon/icon_back.png"),
                     headerRight: () => (
                         <Pressable onPress={() => rewish(!wish)}>
@@ -141,7 +146,7 @@ const HomeStack = ({ navigation }) => {
                             )}
                         </Pressable>
                     ),
-                })}
+                }}
             />
         </Stack.Navigator>
     );
