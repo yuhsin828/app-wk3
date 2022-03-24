@@ -1,29 +1,27 @@
 import React from "react-native";
-import { View, Text, FlatList, SectionList, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, FlatList, SectionList } from "react-native";
 
 import BookDetail from "./BookDetail";
 
 const BookList = ({ list, navigation }) => {
-    // Flat Item
-    const renderItem = ({ item }) => (
-        <BookDetail book={item} navigation={navigation} />
-    );
-    // Section Header
-    const renderSectionHeader = ({ section: { title, data } }) => (
-        <View style={styles.sectionHeaderContainerStyle}>
-            <Text style={styles.titleTextStyle}>{title}</Text>
+    const renderItem = ({ item }) => {
+        return (
+            <BookDetail book={item} navigation={navigation} />
+        );
+    };
+    const renderSectionHeader = ({ section }) => (
+        <View style={styles.sectionHeader}>
+            <Text style={styles.titleText}>{section.title}</Text>
             <FlatList
                 horizontal={true}
-                data={data}
-                renderItem={renderItem}
                 showsHorizontalScrollIndicator={false}
-                keyExtractor={(item) => item.title}
+                data={section.data}
+                renderItem={renderItem}
+                keyExtractor={item => item.title}
             />
         </View>
     );
-    // Section Item
     const renderSectionItem = () => null;
-    // Section List
     return (
         <SectionList
             sections={list}
@@ -31,21 +29,23 @@ const BookList = ({ list, navigation }) => {
             showsHorizontalScrollIndicator={false}
             renderSectionHeader={renderSectionHeader}
             renderItem={renderSectionItem}
-            keyExtractor={(item) => item.title}
+            keyExtractor={item => item.title}
         />
     );
 };
 
 const styles = StyleSheet.create({
-    sectionHeaderContainerStyle: {
+    sectionHeader: {
         paddingLeft: 20,
+        marginTop: 8,
         marginBottom: 16,
     },
-    titleTextStyle: {
+    titleText: {
+        paddingBottom: 16,
         fontSize: 24,
         fontFamily: "Roboto",
         fontWeight: "500",
-        marginBottom: 16,
+        color: "#131313",
     },
 });
 

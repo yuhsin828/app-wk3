@@ -1,22 +1,18 @@
 import React from "react-native";
 import { Text, View, Image, StyleSheet, Pressable } from "react-native";
 
-const BookDetail = ({
-    book,
-    book: { title, author, image, star },
-    navigation,
-}) => {
+const BookDetail = ({ book, navigation }) => {
     return (
         <View style={styles.bookCardContainerStyle}>
             <Pressable onPress={() => navigation.navigate("Detail", book)}>
-                <Image style={styles.bookImageStyle} source={{ uri: image }} />
+                <Image style={styles.bookImageStyle} source={{ uri: book.image }} />
             </Pressable>
-            {star ? (
+            {book.star ? (
                 <View style={styles.starContainerStyle}>
-                    {star.map((value, index) => {
+                    {book.star.map((value, index) => {
                         return (
-                            <View key={index.toString() + title}>
-                                {star[index] ? (
+                            <View key={index.toString() + book.title}>
+                                {book.star[index] ? (
                                     <Image
                                         source={require("../icon/icon_star_filled.png")}
                                         style={styles.starImageStyle}
@@ -32,8 +28,8 @@ const BookDetail = ({
                     })}
                 </View>
             ) : null}
-            <Text style={styles.titleTextStyle}>{title}</Text>
-            <Text style={styles.authorTextStyle}>{author}</Text>
+            <Text style={styles.titleTextStyle}>{book.title}</Text>
+            <Text style={styles.authorTextStyle}>{book.author}</Text>
         </View>
     );
 };
