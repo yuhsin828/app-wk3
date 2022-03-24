@@ -15,7 +15,6 @@ const Tab = createBottomTabNavigator();
 const Navigation = () => {
     return (
         <NavigationContainer>
-            {/* <StackNavigator /> */}
             <HomeTab />
         </NavigationContainer>
     );
@@ -108,10 +107,8 @@ const HomeStack = ({ navigation }) => {
     return (
         <Stack.Navigator
             screenOptions={{
-                // headerShown: false,
                 headerShadowVisible: false,
                 title: null,
-                // headerStyle: {},
             }}
         >
             <Stack.Screen
@@ -124,7 +121,7 @@ const HomeStack = ({ navigation }) => {
                         </Pressable>
                     ),
                     headerRight: () => (
-                        <Pressable onPress={() => alert("Gotta make you understand")}>
+                        <Pressable onPress={() => alert("Search")}>
                             <Image source={require("../icon/icon_search.png")} />
                         </Pressable>
                     ),
@@ -158,7 +155,6 @@ const WishListStack = ({ navigation }) => {
                 name="WishList"
                 component={WishListScreen}
                 options={{
-                    // headerShown: false,
                     headerShadowVisible: false,
                     title: null,
                     headerLeft: () => (
@@ -167,7 +163,7 @@ const WishListStack = ({ navigation }) => {
                         </Pressable>
                     ),
                     headerRight: () => (
-                        <Pressable onPress={() => alert("Searching for Something")}>
+                        <Pressable onPress={() => alert("Search")}>
                             <Image source={require("../icon/icon_search.png")} />
                         </Pressable>
                     ),
@@ -185,7 +181,6 @@ const MyBooksStack = ({ navigation }) => {
                 name="MyBooks"
                 component={MyBooksScreen}
                 options={{
-                    // headerShown: false,
                     headerShadowVisible: false,
                     title: null,
                     headerLeft: () => (
@@ -194,7 +189,7 @@ const MyBooksStack = ({ navigation }) => {
                         </Pressable>
                     ),
                     headerRight: () => (
-                        <Pressable onPress={() => alert("Searching for Something")}>
+                        <Pressable onPress={() => alert("Search")}>
                             <Image source={require("../icon/icon_search.png")} />
                         </Pressable>
                     ),
