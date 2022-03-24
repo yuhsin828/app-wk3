@@ -1,40 +1,18 @@
 import React from "react";
-import { StyleSheet, Text, View, ScrollView, Image, Pressable, } from "react-native";
+import { StyleSheet, Text, View, ScrollView, Image, Pressable } from "react-native";
+import Star from "react-native-star-view";
 
-const BookDetailScreen = ({ route: { params } }) => {
-    const { title, author, image, star, starCount, description, price } = params;
+const BookDetailScreen = ({ route }) => {
+    const { title, author, image, star, description, price } = route.params;
     return (
         <ScrollView style={{ backgroundColor: "#fff" }}>
-            <View style={styles.bookDetailContainerStyle}>
+            <View style={styles.detailContainerStyle}>
                 <Image style={styles.bookImageStyle} source={{ uri: image }} />
                 <View style={styles.bookInfoContainerStyle}>
                     <Text style={styles.titleTextStyle}>{title}</Text>
                     <Text style={styles.authorTextStyle}>{author}</Text>
                     {star ? (
-                        <View style={styles.rateContainerStyle}>
-                            <View style={styles.starContainerStyle}>
-                                {star.map((value, index) => {
-                                    return (
-                                        <View key={index.toString() + title}>
-                                            {star[index] ? (
-                                                <Image
-                                                    source={require("../icon/icon_star_filled.png")}
-                                                    style={styles.starImageStyle}
-                                                />
-                                            ) : (
-                                                <Image
-                                                    source={require("../icon/icon_star_empty.png")}
-                                                    style={styles.starImageStyle}
-                                                />
-                                            )}
-                                        </View>
-                                    );
-                                })}
-                            </View>
-                            <Text style={styles.rateTextStyle}>
-                                {starCount} / <Text style={styles.rateMaxTextStyle}>5.0</Text>
-                            </Text>
-                        </View>
+                        <Star score={star} style={styles.starStyle} />
                     ) : null}
                 </View>
                 <View style={styles.descriptionContainerStyle}>
@@ -51,7 +29,7 @@ const BookDetailScreen = ({ route: { params } }) => {
 };
 
 const styles = StyleSheet.create({
-    bookDetailContainerStyle: {
+    detailContainerStyle: {
         alignItems: "center",
     },
     bookImageStyle: {
@@ -129,6 +107,11 @@ const styles = StyleSheet.create({
         fontFamily: "Roboto",
         fontWeight: "500",
         color: "#fff",
+    },
+    starStyle: {
+        width: 86,
+        height: 17,
+        marginBottom: 8.5
     },
 });
 

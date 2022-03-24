@@ -15,14 +15,14 @@ const Tab = createBottomTabNavigator();
 const Navigation = () => {
     return (
         <NavigationContainer>
-            <HomeTab />
+            <MyTab />
         </NavigationContainer>
     );
 };
 
 
-// HomeTab (HomeStack + WishListStack + MyBooksStack)
-const HomeTab = () => {
+// MyTab (HomeStack + WishListStack + MyBooksStack)
+const MyTab = () => {
     return (
         <Tab.Navigator
             initialRouteName="HomeStack"
@@ -63,10 +63,10 @@ const HomeTab = () => {
                 }}
             />
             <Tab.Screen
-                name="WishlistStack"
+                name="WishListStack"
                 component={WishListStack}
                 options={{
-                    title: "Wishlist",
+                    title: "WishList",
                     tabBarIcon: ({ focused }) => (
                         <>
                             {focused ? (
@@ -101,9 +101,9 @@ const HomeTab = () => {
     );
 };
 
-// Stack - Home (BookListScreen + BookDetailScreen)
+// HomeStack (BookListScreen + BookDetailScreen)
 const HomeStack = ({ navigation }) => {
-    const [marked, setMarked] = useState(false);
+    const [wish, rewish] = useState(false);
     return (
         <Stack.Navigator
             screenOptions={{
@@ -133,8 +133,8 @@ const HomeStack = ({ navigation }) => {
                 options={({ route }) => ({
                     headerBackImageSource: require("../icon/icon_back.png"),
                     headerRight: () => (
-                        <Pressable onPress={() => setMarked(!marked)}>
-                            {marked ? (
+                        <Pressable onPress={() => rewish(!wish)}>
+                            {wish ? (
                                 <Image source={require("../icon/icon_bookmark_actived.png")} />
                             ) : (
                                 <Image source={require("../icon/icon_bookmark.png")} />
@@ -147,7 +147,7 @@ const HomeStack = ({ navigation }) => {
     );
 };
 
-// Stack - Wishlist (WishListScreen)
+// WishListStack (WishListScreen)
 const WishListStack = ({ navigation }) => {
     return (
         <Stack.Navigator>
@@ -173,7 +173,7 @@ const WishListStack = ({ navigation }) => {
     );
 };
 
-// Stack - My Books (MyBooksScreen)
+// MyBooksStack (MyBooksScreen)
 const MyBooksStack = ({ navigation }) => {
     return (
         <Stack.Navigator>
