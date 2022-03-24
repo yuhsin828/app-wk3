@@ -16,8 +16,7 @@ const Navigation = () => {
     return (
         <NavigationContainer>
             {/* <StackNavigator /> */}
-            {/* <Tabs /> */}
-            {/* <MyDrawer /> */}
+            <HomeTab />
         </NavigationContainer>
     );
 };

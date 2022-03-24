@@ -5,21 +5,21 @@
             {
                 "title": "Fashionopolis",
                 "author": "Dana Thomas",
-                "image": "https://github.com/yuhsin828/app-wk3/blob/master/src/img/img_book_fashinopolis.png",
+                "image": "https://github.com/yuhsin828/app-wk3/blob/master/src/img/img_book_fashinopolis.png?raw=true",
                 "description": "Fashionopolis description",
                 "price": 12.34
             },
             {
                 "title": "Chanel",
                 "author": "Patrick Mauriès",
-                "image": "https://github.com/yuhsin828/app-wk3/blob/master/src/img/img_book_chanel.png",
+                "image": "https://github.com/yuhsin828/app-wk3/blob/master/src/img/img_book_chanel.png?raw=true",
                 "description": "Chanel description",
                 "price": 23.45
             },
             {
                 "title": "Calligraphy",
                 "author": "June & Lucy",
-                "image": "https://github.com/yuhsin828/app-wk3/blob/master/src/img/img_book_calligraphy.png",
+                "image": "https://github.com/yuhsin828/app-wk3/blob/master/src/img/img_book_calligraphy.png?raw=true",
                 "description": "Calligraphy description",
                 "price": 34.56
             }
@@ -31,7 +31,7 @@
             {
                 "title": "Yves Saint Laurent",
                 "author": "Suzy Menkes ",
-                "image": "https://github.com/yuhsin828/app-wk3/blob/master/src/img/img_book_ysl.png",
+                "image": "https://github.com/yuhsin828/app-wk3/blob/master/src/img/img_book_ysl.png?raw=true",
                 "star": [
                     true,
                     true,
@@ -46,7 +46,7 @@
             {
                 "title": "The Book of Signs",
                 "author": "Rudolf Koch ",
-                "image": "https://github.com/yuhsin828/app-wk3/blob/master/src/img/img_book_tbos.png",
+                "image": "https://github.com/yuhsin828/app-wk3/blob/master/src/img/img_book_tbos.png?raw=true",
                 "star": [
                     true,
                     true,
@@ -61,7 +61,7 @@
             {
                 "title": "Stitched Up",
                 "author": "Tansy E. Hoskins",
-                "image": "https://github.com/yuhsin828/app-wk3/blob/master/src/img/img_book_stitchedup.png",
+                "image": "https://github.com/yuhsin828/app-wk3/blob/master/src/img/img_book_stitchedup.png?raw=true",
                 "star": [
                     true,
                     true,
