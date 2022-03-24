@@ -1,5 +1,5 @@
-import React from "react-native";
-import { View, Text, StyleSheet, FlatList, SectionList } from "react-native";
+import React from "react";
+import { View, Text, FlatList, SectionList, StyleSheet } from "react-native";
 
 import BookDetail from "./BookDetail";
 

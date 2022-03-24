@@ -1,50 +1,49 @@
-import React from "react-native";
-import { Text, View, Image, StyleSheet, Pressable } from "react-native";
+import React from "react";
+import { View, Pressable, Image, Text, StyleSheet } from "react-native";
 import Star from "react-native-star-view";
 
 const BookDetail = ({ book, navigation }) => {
     return (
-        <View style={styles.cardContainerStyle}>
+        <View style={styles.cardContainer}>
             <Pressable onPress={() => navigation.navigate("Detail", book)}>
-                <Image style={styles.bookImageStyle} source={{ uri: book.image }} />
+                <Image style={styles.bookImage} source={{ uri: book.image }} />
             </Pressable>
             {book.star ? (
-                <Star score={book.star} style={styles.starStyle} />
+                <Star score={book.star} style={styles.starContainer} />
             ) : null}
-            <Text style={styles.titleTextStyle}>{book.title}</Text>
-            <Text style={styles.authorTextStyle}>{book.author}</Text>
+            <Text style={styles.titleText}>{book.title}</Text>
+            <Text style={styles.authorText}>{book.author}</Text>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    cardContainerStyle: {
-        flexDirection: "column",
+    cardContainer: {
         marginRight: 16,
     },
-    bookImageStyle: {
+    bookImage: {
         width: 140,
         height: 200,
         marginBottom: 16,
     },
-    titleTextStyle: {
+    starContainer: {
+        width: 86,
+        height: 17,
+        marginBottom: 8
+    },
+    titleText: {
         fontSize: 16,
         fontWeight: "500",
         fontFamily: "Roboto",
         color: "#131313",
         marginBottom: 8,
     },
-    authorTextStyle: {
+    authorText: {
         fontSize: 12,
         fontWeight: "500",
         fontFamily: "Roboto",
         color: "#131313",
         opacity: 0.5,
-    },
-    starStyle: {
-        width: 86,
-        height: 17,
-        marginBottom: 8.5
     },
 });
 

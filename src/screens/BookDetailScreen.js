@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, ScrollView, Image, Pressable } from "react-native";
+import { ScrollView, View, Image, Text, Pressable, StyleSheet } from "react-native";
 import Star from "react-native-star-view";
 
 const BookDetailScreen = ({ route }) => {
@@ -14,7 +14,7 @@ const BookDetailScreen = ({ route }) => {
                     <View style={styles.rateContainer}>
                         <Star score={star} style={styles.starContainer} />
                         <Text style={styles.rateText}>{rate}
-                            <Text style={styles.rateMaxText}>/5.0</Text>
+                            <Text style={styles.rateMaxText}> / 5.0</Text>
                         </Text>
                     </View>
                 ) : null}

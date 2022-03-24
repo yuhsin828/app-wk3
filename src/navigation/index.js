@@ -11,7 +11,6 @@ import MyBooksScreen from "../screens/MyBooksScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-
 const Navigation = () => {
     return (
         <NavigationContainer>
@@ -19,7 +18,6 @@ const Navigation = () => {
         </NavigationContainer>
     );
 };
-
 
 // MyTab (HomeStack + WishListStack + MyBooksStack)
 const MyTab = () => {
