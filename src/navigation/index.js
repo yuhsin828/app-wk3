@@ -103,7 +103,7 @@ const MyTab = () => {
 
 // HomeStack (BookListScreen + BookDetailScreen)
 const HomeStack = ({ navigation }) => {
-    const [wish, rewish] = useState(false);
+    const [wish, setwish] = useState(false);
     return (
         <Stack.Navigator
             screenOptions={{
@@ -131,14 +131,13 @@ const HomeStack = ({ navigation }) => {
                 name="Detail"
                 component={BookDetailScreen}
                 options={{
-                    // headerLeft: () => (
-                    //     <Pressable onPress={() => navigation.navigate("Home", route)}>
-                    //         <Image source={require("../icon/icon_back.png")} />
-                    //     </Pressable>
-                    // ),
-                    headerBackImageSource: require("../icon/icon_back.png"),
+                    headerLeft: () => (
+                        <Pressable onPress={() => navigation.goBack()}>
+                            <Image source={require("../icon/icon_back.png")} />
+                        </Pressable>
+                    ),
                     headerRight: () => (
-                        <Pressable onPress={() => rewish(!wish)}>
+                        <Pressable onPress={() => setwish(!wish)}>
                             {wish ? (
                                 <Image source={require("../icon/icon_bookmark_actived.png")} />
                             ) : (
