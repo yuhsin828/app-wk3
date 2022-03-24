@@ -1,32 +1,15 @@
 import React from "react-native";
 import { Text, View, Image, StyleSheet, Pressable } from "react-native";
+import Star from "react-native-star-view";
 
 const BookDetail = ({ book, navigation }) => {
     return (
-        <View style={styles.bookCardContainerStyle}>
+        <View style={styles.cardContainerStyle}>
             <Pressable onPress={() => navigation.navigate("Detail", book)}>
                 <Image style={styles.bookImageStyle} source={{ uri: book.image }} />
             </Pressable>
             {book.star ? (
-                <View style={styles.starContainerStyle}>
-                    {book.star.map((value, index) => {
-                        return (
-                            <View key={index.toString() + book.title}>
-                                {book.star[index] ? (
-                                    <Image
-                                        source={require("../icon/icon_star_filled.png")}
-                                        style={styles.starImageStyle}
-                                    />
-                                ) : (
-                                    <Image
-                                        source={require("../icon/icon_star_empty.png")}
-                                        style={styles.starImageStyle}
-                                    />
-                                )}
-                            </View>
-                        );
-                    })}
-                </View>
+                <Star score={book.star} style={styles.starStyle} />
             ) : null}
             <Text style={styles.titleTextStyle}>{book.title}</Text>
             <Text style={styles.authorTextStyle}>{book.author}</Text>
@@ -35,7 +18,7 @@ const BookDetail = ({ book, navigation }) => {
 };
 
 const styles = StyleSheet.create({
-    bookCardContainerStyle: {
+    cardContainerStyle: {
         flexDirection: "column",
         marginRight: 16,
     },
@@ -58,14 +41,10 @@ const styles = StyleSheet.create({
         color: "#131313",
         opacity: 0.5,
     },
-    starContainerStyle: {
-        flexDirection: "row",
-        marginBottom: 8,
-    },
-    starImageStyle: {
-        width: 14,
-        height: 14,
-        marginLeft: 4,
+    starStyle: {
+        width: 86,
+        height: 17,
+        marginBottom: 8.5
     },
 });
 
